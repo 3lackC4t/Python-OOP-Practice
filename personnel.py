@@ -1,11 +1,12 @@
 #!/bin/python
 
 class Employee:
-    def __init__(self, fname: str, lname: str, title: str, salary: float):
+    def __init__(self, fname: str, lname: str, title: str, salary: float, UID=0):
         self.fname = fname
         self.lname = lname
         self.title = title
         self.salary = salary
+        self.UID = UID
 
     def get_name(self) -> str:
         return f"{self.fname} {self.lname}"
@@ -37,7 +38,7 @@ class User(Employee):
         self.admin_status = False
 
 class Contractor(Employee):
-    def __init__(self, fname, lname, title, salary, contract_length: int):
+    def __init__(self, fname, lname, title, salary, contract_length: float):
         super().__init__(fname, lname, title, salary)
         self.contract_length = contract_length
 
@@ -49,3 +50,10 @@ class Contractor(Employee):
 
     def get_contract_cost(self) -> float:
         return self.contract_length * self.salary
+
+if __name__ == "__main__":
+    suzy = Employee('Suzy','Masterson','Database Admin', 67000)
+    print(suzy.get_name())
+    print(suzy.get_title())
+    print(suzy.get_salary())
+    phil = Contractor('Phil','Harmonic','Signals Analyst', 86000, 0.5)
