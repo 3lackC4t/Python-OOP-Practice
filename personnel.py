@@ -51,9 +51,4 @@ class Contractor(Employee):
     def get_contract_cost(self) -> float:
         return self.contract_length * self.salary
 
-if __name__ == "__main__":
-    suzy = Employee('Suzy','Masterson','Database Admin', 67000)
-    print(suzy.get_name())
-    print(suzy.get_title())
-    print(suzy.get_salary())
-    phil = Contractor('Phil','Harmonic','Signals Analyst', 86000, 0.5)
+
